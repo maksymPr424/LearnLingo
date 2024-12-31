@@ -1,0 +1,90 @@
+.header {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1180px;
+}
+
+.logoContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.iconLogo {
+  width: 28px;
+  height: 28px;
+}
+
+.logoTEXT {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.linksContainer {
+  display: flex;
+  gap: 28px;
+}
+
+.link {
+  position: relative;
+}
+
+.link::before {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  transition: 0.25s all ease;
+  content: "";
+  border-top: 1px solid transparent;
+  background: linear-gradient(50deg, yellow, blue);
+}
+
+.link:hover::before {
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.logInButton {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.logInButton:hover .iconLogiN {
+  transform: translateX(6px);
+}
+
+.iconLogiN {
+  width: 20px;
+  height: 20px;
+  transition: 0.25s all ease;
+}
+
+.regButton {
+  padding: 14px 39px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  background-color: var(--base);
+  border-radius: 12px;
+  transition: 0.3s all ease;
+  border: 1px solid transparent;
+}
+
+.regButton:hover {
+  background-color: var(--white);
+  color: var(--base);
+  border-color: var(--base);
+}
