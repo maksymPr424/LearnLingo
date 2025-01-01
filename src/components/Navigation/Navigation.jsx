@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import css from "./Navigation.module.css";
+import Button from "../Button/Button";
 
 export default function Navigation() {
   return (
@@ -30,13 +31,13 @@ export default function Navigation() {
         </ul>
       </nav>
       <div className={css.buttons}>
-        <button className={css.logInButton}>
+        <Button customStyles={css.logInButton} type="logIn">
           <svg className={css.iconLogiN}>
             <use href="/sprite.svg#icon-logIn" />
           </svg>
           Log in
-        </button>
-        <button className={css.regButton}>Registration</button>
+        </Button>
+        <Button type="reg">Registration</Button>
       </div>
     </header>
   );

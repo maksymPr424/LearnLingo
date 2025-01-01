@@ -9,7 +9,11 @@
   background-color: #242424; */
 
   --base: #121417;
+  --low-base: #121417b2;
   --white: #fff;
+  --accent: #f4c550;
+  --gray: #f8f8f8;
+  --no-accent: #fbe9ba;
 }
 
 .visually-hidden {

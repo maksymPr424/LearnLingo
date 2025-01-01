@@ -1,5 +1,13 @@
 import css from "./Button.module.css";
 
-export default function Button({ type, text }) {
-  return <button className={`css.${type}`}></button>;
+export default function Button({ type, customStyles, children }) {
+  return (
+    <button
+      className={`${type === "logIn" ? null : css.baseStyles} ${
+        css[type]
+      } ${customStyles}`}
+    >
+      {children}
+    </button>
+  );
 }

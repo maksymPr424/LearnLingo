@@ -53,14 +53,6 @@
   gap: 16px;
 }
 
-.logInButton {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font-weight: 700;
-  font-size: 16px;
-}
-
 .logInButton:hover .iconLogiN {
   transform: translateX(6px);
 }
@@ -71,20 +63,4 @@
   transition: 0.25s all ease;
 }
 
-.regButton {
-  padding: 14px 39px;
-  text-align: center;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 16px;
-  background-color: var(--base);
-  border-radius: 12px;
-  transition: 0.3s all ease;
-  border: 1px solid transparent;
-}
 
-.regButton:hover {
-  background-color: var(--white);
-  color: var(--base);
-  border-color: var(--base);
-}

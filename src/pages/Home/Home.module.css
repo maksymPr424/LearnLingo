@@ -1,0 +1,80 @@
+.hero {
+  max-width: 1312px;
+  margin: 20px auto 0;
+}
+
+.topInfo {
+  display: flex;
+  gap: 24px;
+}
+
+.leftInfo {
+  padding: 96px 108px 98px 64px;
+  border-radius: 30px;
+  background-color: var(--gray);
+  width: 720px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 32px;
+}
+
+.titleSpan {
+  font-weight: 400;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: normal;
+}
+
+.titleSpan:before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 105%;
+  height: 80%;
+  background-color: var(--no-accent);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.subtitle {
+  margin-bottom: 64px;
+}
+
+.heroIcons {
+  background-color: var(--no-accent);
+  border-radius: 30px;
+  text-align: center;
+  padding: 80px 114px 0;
+  position: relative;
+}
+
+.woman {
+  width: 339px;
+  height: 339px;
+}
+
+.mac {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 154px;
+}
+
+.statistics {
+  margin-top: 24px;
+  display: flex;
+  gap: 100px;
+  padding: 40px 123px;
+  border-radius: 30px;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='%23F4C550FF' stroke-width='2' stroke-dasharray='8%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  margin-bottom: 32px;
+}

@@ -1,0 +1,45 @@
+.logIn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.baseStyles {
+  padding: 14px 39px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  background-color: var(--base);
+  border-radius: 12px;
+  transition: 0.3s all ease;
+  border: 1px solid transparent;
+}
+
+.reg {
+  padding: 14px 39px;
+  text-align: center;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  background-color: var(--base);
+  border-radius: 12px;
+  transition: 0.3s all ease;
+  border: 1px solid transparent;
+}
+
+.reg:hover {
+  background-color: var(--low-base);
+}
+
+.start {
+  padding: 16px 88px;
+  background-color: var(--accent);
+  color: var(--base);
+}
+
+.start:hover {
+  background-color: var(--no-accent);
+}
