@@ -26,18 +26,18 @@
   font-weight: 400;
   font-style: italic;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   mix-blend-mode: normal;
 }
 
 .titleSpan:before {
   position: absolute;
   content: "";
-  bottom: 0;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   width: 105%;
-  height: 80%;
+  height: 67%;
   background-color: var(--no-accent);
   border-radius: 10px;
   z-index: -1;

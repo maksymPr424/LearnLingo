@@ -9,13 +9,19 @@
 .baseStyles {
   padding: 14px 39px;
   text-align: center;
-  color: var(--white);
+  color: var(--base);
   font-weight: 700;
   font-size: 16px;
-  background-color: var(--base);
+  background-color: var(--accent);
   border-radius: 12px;
   transition: 0.3s all ease;
   border: 1px solid transparent;
+}
+
+.baseStyles:hover,
+.baseStyles:active,
+.baseStyles:focus {
+  background-color: var(--no-accent);
 }
 
 .reg {
@@ -30,7 +36,9 @@
   border: 1px solid transparent;
 }
 
-.reg:hover {
+.reg:hover,
+.reg:active,
+.reg:focus {
   background-color: var(--low-base);
 }
 
@@ -40,6 +48,6 @@
   color: var(--base);
 }
 
-.start:hover {
-  background-color: var(--no-accent);
+.logReg {
+  width: 100%;
 }

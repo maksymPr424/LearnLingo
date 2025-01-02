@@ -1,0 +1,52 @@
+.form {
+  max-width: 566px;
+  padding: 64px;
+  position: relative;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: var(--white);
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.iconX {
+  width: 32px;
+  height: 32px;
+  stroke: var(--base);
+}
+
+.btnClose {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.subtitle {
+  margin-top: 20px;
+}
+
+.inputContainer {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input {
+  padding: 16px 18px;
+  border: 1px solid var(--no-base);
+  border-radius: 16px;
+  width: 100%;
+}
+
+.button {
+  margin-top: 40px;
+}
