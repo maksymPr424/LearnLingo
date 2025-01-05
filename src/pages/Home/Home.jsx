@@ -2,7 +2,11 @@ import Button from "../../components/Button/Button";
 import css from "./Home.module.css";
 import women from "../../images/heroWomen.png";
 import mac from "../../images/Mac.png";
+
+
 export default function Home() {
+
+
   return (
     <section className={css.hero}>
       <div className={css.topInfo}>

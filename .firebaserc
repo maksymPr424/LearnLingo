@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "learnlingo-1abdc",
+    "staging": "learnlingo-1abdc"
+  },
+  "targets": {},
+  "etags": {}
+}

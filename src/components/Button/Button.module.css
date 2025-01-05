@@ -18,9 +18,7 @@
   border: 1px solid transparent;
 }
 
-.baseStyles:hover,
-.baseStyles:active,
-.baseStyles:focus {
+.baseStyles:hover {
   background-color: var(--no-accent);
 }
 
