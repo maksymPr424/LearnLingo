@@ -1,3 +1,42 @@
 .basic {
-    
+  display: flex;
+  flex-direction: column;
+  color: var(--secondary-text);
+  font-weight: 500;
+}
+
+.selectContainer {
+  position: relative;
+  margin-top: 8px;
+}
+
+.basic select {
+  border-radius: 14px;
+  background-color: var(--white);
+  outline: none;
+  border: none;
+  padding: 14px 18px;
+  padding-right: 32px;
+  color: var(--base);
+  font-weight: 500;
+  font-size: 18px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.selectContainer::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 13px;
+  width: 11px;
+  height: 7px;
+  background-color: var(--base);
+  mask: url("../../assets/arrow.svg") no-repeat center;
+  -webkit-mask: url("../../assets/arrow.svg") no-repeat center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  pointer-events: none;
 }

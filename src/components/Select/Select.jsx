@@ -1,6 +1,21 @@
-import { useEffect, useState } from "react";
 import OptionsToFIlters from "../OptionsToFIlters/OptionsToFIlters";
 import css from "./Select.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setFilter } from "../../redux/filters/slice";
+import { selectFilters } from "../../redux/filters/selectors";
+
+const selectValues = {
+  level: [
+    "A1 Beginner",
+    "A2 Elementary",
+    "B1 Intermediate",
+    "B2 Upper-Intermediate",
+    "C1 Advanced",
+    "C2 Proficient",
+  ],
+  price: [10, 20, 30, 40],
+  language: ["French", "English", "German", "Ukrainian", "Polish"],
+};
 
 const labels = {
   level: "Level of knowledge",
@@ -8,48 +23,30 @@ const labels = {
   language: "Languages",
 };
 
-const levels = [
-  "A1 Beginner",
-  "A2 Elementary",
-  "B1 Intermediate",
-  "B2 Upper-Intermediate",
-  "C1 Advanced",
-  "C2 Proficient",
-];
-
-const prices = [10, 20, 30, 40];
-
-const languages = ["French", "English", "German", "Ukrainian", "Polish"];
-
 export default function Select({ typeSelect }) {
-  const [selectType, setSelectType] = useState([]);
+  const dispatch = useDispatch();
+  const activeFilters = useSelector(selectFilters);
 
-  useEffect(() => {
-    switch (typeSelect) {
-      case "level":
-        setSelectType(levels);
-        break;
-      case "price":
-        setSelectType(prices);
-        break;
-      case "language":
-        setSelectType(languages);
-        break;
-
-      default:
-        setSelectType([]);
-        break;
-    }
-  }, [typeSelect]);
+  const handleChangeSelect = (e) => {
+    dispatch(setFilter({ type: typeSelect, data: e.target.value }));
+  };
 
   return (
-    <div className={`${css.basic} ${css[typeSelect]}`}>
-      <label htmlFor={typeSelect}>
-        {labels[typeSelect]}
-        <select name={typeSelect} id={typeSelect}>
-          <OptionsToFIlters styleType={typeSelect} arrValues={selectType} />
+    <label className={`${css.basic} ${css[typeSelect]}`} htmlFor={typeSelect}>
+      {labels[typeSelect]}
+      <div className={css.selectContainer}>
+        <select
+          value={activeFilters[typeSelect]}
+          name={typeSelect}
+          id={typeSelect}
+          onChange={handleChangeSelect}
+        >
+          <OptionsToFIlters
+            styleType={typeSelect}
+            arrValues={selectValues[typeSelect]}
+          />
         </select>
-      </label>
-    </div>
+      </div>
+    </label>
   );
 }

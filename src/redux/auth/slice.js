@@ -6,6 +6,7 @@ const initialState = {
     name: "",
     email: "",
     uid: "",
+    favoriteTeachers: [0, 1],
   },
   token: null,
   isLoggedIn: false,

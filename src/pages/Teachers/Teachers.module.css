@@ -1,0 +1,13 @@
+.teachers {
+    max-width: 1184px;
+    margin: 36px auto 0;
+}
+
+.filters {
+    display: flex;
+    gap: 20px;
+}
+
+.cards {
+    margin-top: 32px;
+}

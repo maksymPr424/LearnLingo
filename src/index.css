@@ -16,6 +16,7 @@
   --gray: #f8f8f8;
   --no-accent: #fbe9ba;
   --error: #c94a4a;
+  --secondary-text: #8a8a89;
 }
 
 .visually-hidden {
@@ -35,6 +36,10 @@
 .container {
   margin: 0 auto;
   padding: 0 15px;
+}
+
+body {
+  background-color: var(--gray);
 }
 
 /* @media (prefers-color-scheme: light) {
