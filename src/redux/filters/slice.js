@@ -12,7 +12,6 @@ const filtersSlice = createSlice({
   reducers: {
     setFilter: (state, action) => {
       state[action.payload.type] = action.payload.data;
-      console.log(action.payload);
     },
   },
 });

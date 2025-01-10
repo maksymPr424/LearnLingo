@@ -18,18 +18,18 @@ export const selectTeachersWithFilters = createSelector(
   selectLanguageFilter,
   selectLevelFilter,
   selectPriceFilter,
-  (teachers, language, level, price) => {
-    console.log(teachers);
-
-    return teachers.filter(({ languages, levels, price_per_hour }) => {
-      if (
-        languages.includes(language) &&
-        levels.includes(level) &&
-        price_per_hour <= price
-      ) {
-        return true;
-      }
-    });
+  (teachers = [], language, level, price) => {
+    return (
+      teachers.filter(({ languages, levels, price_per_hour }) => {
+        if (
+          languages.includes(language) &&
+          levels.includes(level) &&
+          price_per_hour <= price
+        ) {
+          return true;
+        }
+      }) || []
+    );
   }
 );
 

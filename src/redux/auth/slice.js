@@ -1,12 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { loginUser, logOutUser, registerUser } from "./operations";
+import {
+  addToUserFavorite,
+  loginUser,
+  logOutUser,
+  registerUser,
+  removeFromUserFavorite,
+} from "./operations";
 
 const initialState = {
   user: {
     name: "",
     email: "",
     uid: "",
-    favoriteTeachers: [0, 1],
+    favoriteTeachers: [],
   },
   token: null,
   isLoggedIn: false,
@@ -31,6 +37,7 @@ const authSlice = createSlice({
         state.user.name = action.payload.name;
         state.user.email = action.payload.email;
         state.token = action.payload.accessToken;
+
         state.user.uid = action.payload.uid;
         state.isLoggedIn = true;
         state.isLoading = false;
@@ -44,6 +51,16 @@ const authSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, action) => {
         state.user.name = action.payload.name;
         state.user.email = action.payload.email;
+        state.user.uid = action.payload.uid;
+
+        const favoriteTeachers = action.payload.favoriteTeachers;
+        const favoriteTeachersIds = [];
+
+        for (let key in favoriteTeachers) {
+          favoriteTeachersIds.push(favoriteTeachers[key]);
+        }
+        state.user.favoriteTeachers = favoriteTeachersIds || [];
+
         state.token = action.payload.accessToken;
         state.isLoggedIn = true;
         state.isLoading = false;
@@ -56,7 +73,31 @@ const authSlice = createSlice({
       .addCase(
         logOutUser.rejected,
         (state, action) => (state.error = action.payload)
-      );
+      )
+      .addCase(addToUserFavorite.pending, pendingFunc)
+      .addCase(addToUserFavorite.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user.favoriteTeachers = [
+          ...state.user.favoriteTeachers,
+          action.payload,
+        ];
+      })
+      .addCase(addToUserFavorite.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(removeFromUserFavorite.pending, pendingFunc)
+      .addCase(removeFromUserFavorite.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.user.favoriteTeachers =
+          state.user.favoriteTeachers.filter(
+            (item) => item !== action.payload
+          ) || [];
+      })
+      .addCase(removeFromUserFavorite.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
 

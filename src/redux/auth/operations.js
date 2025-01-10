@@ -4,7 +4,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth, database } from "../../../app";
-import { get, ref, set } from "firebase/database";
+import { get, push, ref, remove, set } from "firebase/database";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const registerUser = createAsyncThunk(
@@ -22,8 +22,8 @@ export const registerUser = createAsyncThunk(
       await set(userRef, {
         name: name,
         email: user.email,
+        favoriteTeachers: { init: "id" },
       });
-      //   console.log("User created:", user);
 
       return { name, email, accessToken: user.accessToken, uid: user.uid };
     } catch (error) {
@@ -45,12 +45,20 @@ export const loginUser = createAsyncThunk(
       const userRef = ref(database, "users/" + user.uid);
       const snapshot = await get(userRef);
 
+      const favoriteTeachers = snapshot.val().favoriteTeachers;
+      const favoriteTeachersIds = [];
+      for (let key in favoriteTeachers) {
+        favoriteTeachersIds.push(favoriteTeachers[key]);
+      }
+
       return {
         ...snapshot.val(),
         uid: user.uid,
         accessToken: user.accessToken,
       };
     } catch (error) {
+      console.log(error.message);
+
       return rejectWithValue(error.message);
     }
   }
@@ -80,6 +88,61 @@ export const getUserData = createAsyncThunk(
         uid: user.uid,
         accessToken: user.accessToken,
       };
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const addToUserFavorite = createAsyncThunk(
+  "auth/addToUserFavorite",
+  async ({ id }, { getState, rejectWithValue }) => {
+    const { auth } = getState();
+    const uid = auth.user.uid;
+    console.log(auth.user);
+
+    try {
+      if (!uid) {
+        throw new Error("You are not logged in!");
+      }
+
+      console.log(id);
+      await push(ref(database, `users/${uid}/favoriteTeachers`), id);
+
+      return id;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const removeFromUserFavorite = createAsyncThunk(
+  "auth/removeFromUserFavorite",
+  async ({ id }, { getState, rejectWithValue }) => {
+    const { auth } = getState();
+    const uid = auth.user.uid;
+
+    try {
+      if (!uid) {
+        throw new Error("You are not logged in!");
+      }
+
+      const favoriteTeachersRef = ref(
+        database,
+        `users/${uid}/favoriteTeachers`
+      );
+      const snapshot = await get(favoriteTeachersRef);
+      console.log(snapshot.val());
+
+      const favoriteTeachers = snapshot.val();
+
+      for (let key in favoriteTeachers) {
+        if (favoriteTeachers[key] === id) {
+          await remove(ref(database, `users/${uid}/favoriteTeachers/${key}`));
+          return id;
+        }
+      }
+      return id;
     } catch (error) {
       return rejectWithValue(error.message);
     }

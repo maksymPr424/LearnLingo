@@ -13,8 +13,19 @@ const selectValues = {
     "C1 Advanced",
     "C2 Proficient",
   ],
-  price: [10, 20, 30, 40],
-  language: ["French", "English", "German", "Ukrainian", "Polish"],
+  price: [25, 30, 35, 40],
+  language: [
+    "French",
+    "English",
+    "German",
+    "Spanish",
+    "Korean",
+    "Mandarin Chinese",
+    "Italian",
+    "Vietnamese",
+    "Ukrainian",
+    "Polish",
+  ],
 };
 
 const labels = {

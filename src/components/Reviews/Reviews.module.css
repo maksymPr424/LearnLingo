@@ -1,0 +1,53 @@
+.iconUser {
+  width: 22px;
+  height: 22px;
+  fill: var(--separator);
+}
+
+.noImage {
+  padding: 6px;
+  /* background-color: var(--separator); */
+  border: 2px solid var(--low-base);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviewInfo {
+  display: flex;
+  align-items: center;
+}
+
+.iconStar {
+  width: 16px;
+  height: 16px;
+}
+
+.infoContainer {
+  text-align: center;
+  margin-left: 12px;
+}
+
+.reviverName {
+  color: var(--secondary-text);
+  font-weight: 500;
+}
+
+.upInfoText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.textInfo {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.comment {
+    font-weight: 500;
+    margin-top: 16px;
+}

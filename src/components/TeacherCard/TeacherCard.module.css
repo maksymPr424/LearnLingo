@@ -1,0 +1,139 @@
+.container {
+  padding: 24px;
+  display: flex;
+  gap: 48px;
+  margin-top: 32px;
+  position: relative;
+}
+
+.allInfo {
+  max-width: 968px;
+  width: 100%;
+}
+
+.nameTeacher {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.upperInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 32px;
+}
+
+.statistics {
+  display: flex;
+  gap: 32px;
+}
+
+.infoText {
+  display: flex;
+  align-items: center;
+}
+
+.upInfoText {
+  max-height: max-content;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.upInfoText:not(:last-child)::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: -16px;
+  height: 16px;
+  width: 1px;
+  border-right: 1px solid var(--separator);
+}
+
+.price {
+  color: var(--active-green);
+}
+
+.iconBook {
+  width: 16px;
+  height: 16px;
+  fill: transparent;
+  stroke: var(--base);
+  margin-right: 8px;
+}
+
+.iconStar {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.iconHeard {
+  width: 26px;
+  height: 26px;
+  --color1: transparent;
+  --color2: var(--base);
+}
+
+.favorite {
+  --color1: var(--accent);
+  --color2: transparent;
+}
+
+.noActive {
+  color: var(--secondary-text);
+}
+
+.textInfo {
+  font-weight: 500;
+}
+
+.underlineText {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.languageText:not(:first-child) {
+  margin-top: 8px;
+}
+
+.baseWrapperStyle {
+  margin-top: 16px;
+  margin-bottom: 32px;
+}
+
+.experience {
+  margin-bottom: 32px;
+}
+
+.moreInfoActive {
+  display: none;
+}
+
+.levels {
+  display: flex;
+  gap: 8px;
+}
+
+.level {
+  padding: 8px 12px;
+  background-color: transparent;
+  border-radius: 35px;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid var(--separator);
+}
+
+.activeLevel {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.reviewerCard:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.reviewerCard:last-child {
+    margin-bottom: 16px;
+}

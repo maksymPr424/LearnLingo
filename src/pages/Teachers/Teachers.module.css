@@ -1,13 +1,19 @@
 .teachers {
-    max-width: 1184px;
-    margin: 36px auto 0;
+  max-width: 1184px;
+  margin: 36px auto 0;
 }
 
 .filters {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .cards {
-    margin-top: 32px;
+  margin-top: 32px;
+}
+
+.button {
+  text-align: center;
+  margin-bottom: 16px;
+  margin-top: 16px;
 }

@@ -72,11 +72,9 @@ export const getTeachers = createAsyncThunk(
       const { teachers } = getState();
       if (teachers.teachers.length !== 0)
         return {
-          data: teachers.data,
+          data: teachers.teachers,
           total: teachers.total,
-          page: teachers.page,
         };
-      teachers;
       let dbRef = ref(database, "teachers");
 
       dbRef = query(dbRef);
@@ -95,7 +93,6 @@ export const getTeachers = createAsyncThunk(
       return {
         data: teachersArray,
         total: totalTeachers,
-        page: 0,
       };
     } catch (error) {
       return rejectWithValue(error.message);

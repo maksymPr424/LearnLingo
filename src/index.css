@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-VariableFont_wdth,wght.ttf") format("woff2"),
+    url("./fonts/Roboto-VariableFont_wdth,wght.woff") format("woff"),
+    url("./fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: sans-serif;
+}
+
 :root {
   font-family: "Roboto", sans-serif;
   line-height: 1.5;
@@ -13,10 +22,13 @@
   --no-base: #1214171a;
   --white: #fff;
   --accent: #f4c550;
+  --no-accent-yellow: #fbe9ba;
   --gray: #f8f8f8;
   --no-accent: #fbe9ba;
   --error: #c94a4a;
   --secondary-text: #8a8a89;
+  --active-green: #38cd3e;
+  --separator: #12141733;
 }
 
 .visually-hidden {
