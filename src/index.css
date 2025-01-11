@@ -27,10 +27,11 @@
   --no-accent: #fbe9ba;
   --error: #c94a4a;
   --secondary-text: #8a8a89;
+  --secondary-statistic: #121417b2;
   --active-green: #38cd3e;
   --separator: #12141733;
+  --info: #9fb7ce;
 }
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -52,6 +53,10 @@
 
 body {
   background-color: var(--gray);
+}
+
+.home-page {
+  background-color: var(--white);
 }
 
 /* @media (prefers-color-scheme: light) {
@@ -180,4 +185,9 @@ label {
 
 legend {
   display: block;
+}
+
+.custom-snackbar {
+  background-color: "var(--accent)";
+  color: "var(--base)";
 }

@@ -8,11 +8,15 @@ import {
   selectTeachersWithFilters,
 } from "../../redux/teachers/selectors";
 import TeachersCards from "../../components/TeachersCards/TeachersCards";
+import { selectIsLoading } from "../../redux/teachers/selectors";
 import Button from "../../components/Button/Button";
+import Loader from "../../components/Loader/Loader";
 
 export default function Teachers() {
   const [page, setPage] = useState(1);
   const [visibleCards, setVisibleCards] = useState([]);
+  const isLoading = useSelector(selectIsLoading);
+
   const dispatch = useDispatch();
 
   const filtered = useSelector(selectTeachersWithFilters);
@@ -44,16 +48,20 @@ export default function Teachers() {
         <Select typeSelect="level" />
         <Select typeSelect="price" />
       </div>
-      <div className={css.cards}>
-        <TeachersCards visibleCards={[...visibleCards]} />
-        {total < page * perPage ? null : (
-          <div className={css.button}>
-            <Button customStyles={css.button} func={handleClick}>
-              Load more
-            </Button>
-          </div>
-        )}
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div className={css.cards}>
+          <TeachersCards visibleCards={[...visibleCards]} />
+          {total < page * perPage ? null : (
+            <div className={css.button}>
+              <Button customStyles={css.button} func={handleClick}>
+                Load more
+              </Button>
+            </div>
+          )}
+        </div>
+      )}
     </section>
   );
 }

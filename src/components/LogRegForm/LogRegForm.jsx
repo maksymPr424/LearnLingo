@@ -10,6 +10,7 @@ import {
 } from "../../../validationSchemas";
 import { loginUser, registerUser } from "../../redux/auth/operations";
 import { useDispatch } from "react-redux";
+import { createNewPush } from "../../../utils";
 
 Modal.setAppElement("#root");
 
@@ -34,16 +35,26 @@ export default function LogRegForm({ type, isOpen, onRequestClose }) {
     setIsOpenPassword((prev) => !prev);
   };
 
-  const handleSend = ({ name, email, password }) => {
+  const handleSend = async ({ name, email, password }) => {
     const sendData = name ? data : { email, password };
     setData(sendData);
 
-    type === "logIn"
-      ? dispatch(loginUser({ email, password }))
-      : dispatch(registerUser({ name, email, password }));
+    try {
+      const logInPromise = dispatch(loginUser({ email, password })).unwrap();
+      const registerPromise = dispatch(
+        registerUser({ name, email, password })
+      ).unwrap();
 
-    reset();
-    closeModal();
+      type === "logIn"
+        ? await Promise.all([logInPromise])
+        : await Promise.all([registerPromise]);
+
+      reset();
+      closeModal();
+      createNewPush({ message: "Success", type: "success" });
+    } catch (_) {
+      createNewPush({ message: "Something went wrong", type: "error" });
+    }
   };
 
   const closeModal = (e) => {

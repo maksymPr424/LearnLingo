@@ -2,6 +2,7 @@ import Button from "../../components/Button/Button";
 import css from "./Home.module.css";
 import women from "../../images/heroWomen.png";
 import mac from "../../images/Mac.png";
+import { NavLink } from "react-router";
 
 export default function Home() {
   return (
@@ -17,7 +18,10 @@ export default function Home() {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </p>
-          <Button type="start">Get started</Button>
+
+          <NavLink to="/teachers">
+            <Button type="start">Get started</Button>
+          </NavLink>
         </div>
         <div className={css.heroIcons}>
           <img className={css.woman} src={women} alt="Women Icon" />
@@ -26,19 +30,19 @@ export default function Home() {
       </div>
       <ul className={css.statistics}>
         <li className={css.statItem}>
-          <p className={css.number}>32,000 +</p>
+          <p className={css.number}>32,000+</p>
           <p className={css.statItemInfo}>Experienced tutors</p>
         </li>
         <li className={css.statItem}>
-          <p className={css.number}>300,000 +</p>
+          <p className={css.number}>300,000+</p>
           <p className={css.statItemInfo}>5-star tutor reviews</p>
         </li>
         <li className={css.statItem}>
-          <p className={css.number}>120 +</p>
+          <p className={css.number}>120+</p>
           <p className={css.statItemInfo}>Subjects taught</p>
         </li>
         <li className={css.statItem}>
-          <p className={css.number}>200 +</p>
+          <p className={css.number}>200+</p>
           <p className={css.statItemInfo}>Tutor nationalities</p>
         </li>
       </ul>

@@ -1,15 +1,13 @@
-import { Audio } from "react-loader-spinner";
+import { Triangle } from "react-loader-spinner";
 
-export default function Loader({ width = "80px", height = "80px" }) {
+export default function Loader({ width = "100%", height = "100%" }) {
   return (
-    <Audio
+    <Triangle
       height={height}
       width={width}
       radius="9"
-      color="var(--text)"
+      color="var(--base)"
       ariaLabel="loading"
-      wrapperStyle
-      wrapperClass
     />
   );
 }

@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: 1180px;
+  position: relative;
 }
 
 .logoContainer {
@@ -22,9 +23,23 @@
   font-size: 20px;
 }
 
+.nav {
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
 .linksContainer {
   display: flex;
-  gap: 28px;
+  flex-direction: column;
+  gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    gap: 28px;
+
+    flex-direction: row;
+  }
 }
 
 .link {
@@ -44,13 +59,24 @@
   background: linear-gradient(50deg, yellow, blue);
 }
 
+.activeLink::before {
+  width: 100%;
+}
+
 .link:hover::before {
   width: 100%;
 }
 
 .buttons {
-  display: flex;
-  gap: 16px;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    gap: 16px;
+    flex-direction: row;
+  }
 }
 
 .logInButton:hover .iconLogiN {
@@ -63,8 +89,49 @@
   transition: 0.25s all ease;
 }
 
-
 .clickDiv {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.iconBurger {
+  width: 32px;
+  height: 32px;
+  stroke: var(--base);
+  position: relative;
+}
+
+.burger {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.burgerModal {
+}
+
+.burgerModalContent {
+  max-width: 100%;
+  padding: 24px;
+  position: relative;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  top: 60px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    padding: 64px;
+  }
+}
+
+.active {
+  gap: 8px;
+  display: flex;
 }

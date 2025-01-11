@@ -1,25 +1,62 @@
 .hero {
-  max-width: 1312px;
+  max-width: 356px;
   margin: 20px auto 0;
+  padding: 0 15px;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1312px;
+  }
 }
 
 .topInfo {
   display: flex;
   gap: 24px;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .leftInfo {
-  padding: 96px 108px 98px 64px;
+  padding: 20px 30px;
   border-radius: 30px;
   background-color: var(--gray);
-  width: 720px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    /* padding: 96px 108px 98px 64px; */
+
+    /* width: 720px; */
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 96px 94px 98px 64px;
+
+    width: 720px;
+    flex-direction: row;
+  }
 }
 
 .title {
   font-weight: 500;
-  font-size: 48px;
   line-height: 1;
   margin-bottom: 32px;
+  font-size: 28px;
+
+  @media screen and (min-width: 354px) {
+    font-size: 32px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 48px;
+  }
 }
 
 .titleSpan {
@@ -45,19 +82,51 @@
 
 .subtitle {
   margin-bottom: 64px;
+  font-size: 14px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    margin-bottom: 34px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 64px;
+  }
 }
 
 .heroIcons {
   background-color: var(--no-accent);
   border-radius: 30px;
   text-align: center;
-  padding: 80px 114px 0;
+  padding: 60px 57px 0;
   position: relative;
+  overflow: hidden;
+
+  @media screen and (min-width: 768px) {
+    padding: 60px 80px 0;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 80px 100px 0;
+  }
+}
+
+body {
+  /* background-color: #fff; */
 }
 
 .woman {
-  width: 339px;
-  height: 339px;
+  width: 250px;
+  height: 250px;
+  transform: translateY(-25%);
+
+  @media screen and (min-width: 768px) {
+    width: 339px;
+    height: 339px;
+    transform: translateY(-18%);
+  }
+  @media screen and (min-width: 1440px) {
+    transform: translateY(0);
+  }
 }
 
 .mac {
@@ -65,16 +134,64 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 360px;
-  height: 154px;
+  width: 260px;
+  /* height: 154px; */
+
+  @media screen and (min-width: 768px) {
+    width: 360px;
+    height: 154px;
+  }
+}
+
+.number {
+  font-weight: 500;
+  font-size: 28px;
+  color: var(--base);
+}
+
+.statItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.statItemInfo {
+  max-width: 100px;
+  font-size: 14px;
+  color: var(--secondary-statistic);
+
+  @media screen and (min-width: 768px) {
+    max-width: 80px;
+  }
 }
 
 .statistics {
+  width: max-content;
   margin-top: 24px;
   display: flex;
-  gap: 100px;
-  padding: 40px 123px;
+  flex-direction: column;
+  gap: 60px;
+  padding: 30px 30px;
   border-radius: 30px;
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='30' ry='30' stroke='%23F4C550FF' stroke-width='2' stroke-dasharray='8%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
   margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    padding: 40px 110px;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 100px;
+    padding: 40px 122px;
+  }
 }

@@ -62,7 +62,7 @@ export default function TeacherCard({ teacher }) {
       <Image src={avatar_url} alt="Teacher avatar" styleType="teacher" />
       <div className={css.allInfo}>
         <div className={css.upperInfo}>
-          <div>
+          <div className={css.nameSurname}>
             <p className={css.noActive}>Languages</p>
             <h3 className={css.nameTeacher}>{`${name} ${surname}`}</h3>
           </div>

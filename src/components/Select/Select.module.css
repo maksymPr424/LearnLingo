@@ -8,6 +8,7 @@
 .selectContainer {
   position: relative;
   margin-top: 8px;
+  max-width: max-content;
 }
 
 .basic select {

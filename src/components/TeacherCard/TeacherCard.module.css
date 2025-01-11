@@ -1,14 +1,35 @@
 .container {
   padding: 24px;
   display: flex;
-  gap: 48px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   margin-top: 32px;
   position: relative;
+  background-color: var(--white);
+  border-radius: 24px;
+
+  @media screen and (min-width: 768px) {
+    /* flex-direction: row; */
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 48px;
+    flex-direction: row;
+  }
 }
 
 .allInfo {
-  max-width: 968px;
+  max-width: 320px;
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    max-width: 968px;
+  }
+}
+
+.nameSurname {
+  min-width: 150px;
 }
 
 .nameTeacher {
@@ -18,19 +39,46 @@
 
 .upperInfo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: baseline;
   margin-bottom: 32px;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 32px;
+    justify-content: space-between;
+  }
 }
 
 .statistics {
   display: flex;
-  gap: 32px;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 768px) {
+    gap: 14px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 32px;
+  }
 }
 
 .infoText {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    /* align-items: center; */
+  }
+
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .upInfoText {
@@ -40,7 +88,7 @@
   position: relative;
 }
 
-.upInfoText:not(:last-child)::after {
+.upInfoText:not(:nth-last-child(-n + 2))::after {
   position: absolute;
   content: "";
   top: 50%;
@@ -49,6 +97,11 @@
   height: 16px;
   width: 1px;
   border-right: 1px solid var(--separator);
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
 }
 
 .price {
@@ -74,6 +127,7 @@
   height: 26px;
   --color1: transparent;
   --color2: var(--base);
+  margin-left: 32px;
 }
 
 .favorite {
@@ -83,6 +137,7 @@
 
 .noActive {
   color: var(--secondary-text);
+  min-width: 100px;
 }
 
 .textInfo {
@@ -113,6 +168,7 @@
 
 .levels {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -135,5 +191,5 @@
 }
 
 .reviewerCard:last-child {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }

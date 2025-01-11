@@ -37,6 +37,6 @@ export const selectFavoriteTeachers = createSelector(
   selectTeachers,
   selectFavoriteTeachersIds,
   (teachers, ids) => {
-    return teachers.filter((item) => ids.includes(item));
+    return teachers.filter(({ id }) => ids.includes(id));
   }
 );

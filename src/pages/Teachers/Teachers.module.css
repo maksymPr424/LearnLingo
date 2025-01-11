@@ -1,11 +1,19 @@
 .teachers {
   max-width: 1184px;
-  margin: 36px auto 0;
+  margin: 36px auto 16px;
 }
 
 .filters {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 15px;
+
+  @media screen and (min-width: 768px) {
+    justify-content: unset;
+    padding: 0;
+  }
 }
 
 .cards {

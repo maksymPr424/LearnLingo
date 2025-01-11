@@ -1,6 +1,6 @@
 .form {
   max-width: 566px;
-  padding: 64px;
+  padding: 24px;
   position: relative;
   border-radius: 30px;
   border: none;
@@ -9,7 +9,11 @@
   margin: 0 auto;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1000;
+  z-index: 999;
+
+  @media screen and (min-width: 768px) {
+    padding: 64px;
+  }
 }
 
 .iconX {
