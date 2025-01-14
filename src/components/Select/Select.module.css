@@ -3,15 +3,13 @@
   flex-direction: column;
   color: var(--secondary-text);
   font-weight: 500;
-}
-
-.selectContainer {
   position: relative;
-  margin-top: 8px;
-  max-width: max-content;
+
 }
 
 .basic select {
+  margin-top: 8px;
+  cursor: pointer;
   border-radius: 14px;
   background-color: var(--white);
   outline: none;
@@ -26,11 +24,10 @@
   -webkit-appearance: none;
 }
 
-.selectContainer::after {
+.basic::after {
   content: "";
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 65%;
   right: 13px;
   width: 11px;
   height: 7px;

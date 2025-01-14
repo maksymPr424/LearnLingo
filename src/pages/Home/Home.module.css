@@ -28,9 +28,6 @@
   width: 100%;
 
   @media screen and (min-width: 768px) {
-    /* padding: 96px 108px 98px 64px; */
-
-    /* width: 720px; */
     flex-direction: row;
   }
 
@@ -110,10 +107,6 @@
   }
 }
 
-body {
-  /* background-color: #fff; */
-}
-
 .woman {
   width: 250px;
   height: 250px;
@@ -135,7 +128,6 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 260px;
-  /* height: 154px; */
 
   @media screen and (min-width: 768px) {
     width: 360px;

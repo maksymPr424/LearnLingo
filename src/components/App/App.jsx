@@ -3,12 +3,12 @@ import "./App.css";
 import Navigation from "../Navigation/Navigation";
 import { Route, Routes, useLocation } from "react-router";
 import Loader from "../Loader/Loader";
-import NotFoundPage from "../NotFound/NotFoundPage";
 import PrivateRoute from "../routes/PrivateRoute";
 import { useEffect } from "react";
 const HomePage = lazy(() => import("../../pages/Home/Home"));
 const TeachersPage = lazy(() => import("../../pages/Teachers/Teachers"));
 const FavoritesPage = lazy(() => import("../../pages/Favorites/Favorites"));
+const NotFoundPage = lazy(() => import("../NotFound/NotFoundPage"));
 
 function App() {
   const { pathname } = useLocation();
@@ -32,9 +32,7 @@ function App() {
           <Route
             path="/teachers"
             element={
-              // <RestrictedRoute>
               <TeachersPage />
-              // </RestrictedRoute>
             }
           />
           <Route

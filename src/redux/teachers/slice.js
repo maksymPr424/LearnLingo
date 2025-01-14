@@ -25,7 +25,6 @@ const teachersSlice = createSlice({
       .addCase(getTeachers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.teachers = action.payload.data;
-        // state.lastKey = action.payload.lastKey;
         state.total = action.payload.total;
       })
       .addCase(getTeachers.rejected, (state, action) => {

@@ -17,7 +17,6 @@ const initialState = {
   token: null,
   isLoggedIn: false,
   isLoading: false,
-  //   isRefreshing: false,
   error: null,
   refreshError: null,
 };
@@ -102,4 +101,3 @@ const authSlice = createSlice({
 });
 
 export const authReducer = authSlice.reducer;
-// export const { clearError, setUserTheme } = slice.actions;

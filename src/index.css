@@ -13,10 +13,6 @@
   font-weight: 400;
   font-size: 16px;
 
-  /* color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
-
   --base: #121417;
   --low-base: #121417b2;
   --no-base: #1214171a;
@@ -58,21 +54,6 @@ body {
 .home-page {
   background-color: var(--white);
 }
-
-/* @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-} */
-
-/* Reset */
 
 * {
   padding: 0px;
@@ -148,7 +129,7 @@ button,
 select {
   font-family: inherit;
   font-size: inherit;
-  color: inherit;
+  color: pointer;
   background-color: transparent;
 }
 

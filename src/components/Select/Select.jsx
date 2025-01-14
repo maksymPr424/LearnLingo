@@ -45,7 +45,6 @@ export default function Select({ typeSelect }) {
   return (
     <label className={`${css.basic} ${css[typeSelect]}`} htmlFor={typeSelect}>
       {labels[typeSelect]}
-      <div className={css.selectContainer}>
         <select
           value={activeFilters[typeSelect]}
           name={typeSelect}
@@ -57,7 +56,6 @@ export default function Select({ typeSelect }) {
             arrValues={selectValues[typeSelect]}
           />
         </select>
-      </div>
     </label>
   );
 }

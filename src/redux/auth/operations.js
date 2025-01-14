@@ -57,8 +57,6 @@ export const loginUser = createAsyncThunk(
         accessToken: user.accessToken,
       };
     } catch (error) {
-      console.log(error.message);
-
       return rejectWithValue(error.message);
     }
   }
@@ -99,14 +97,12 @@ export const addToUserFavorite = createAsyncThunk(
   async ({ id }, { getState, rejectWithValue }) => {
     const { auth } = getState();
     const uid = auth.user.uid;
-    console.log(auth.user);
 
     try {
       if (!uid) {
         throw new Error("You are not logged in!");
       }
 
-      console.log(id);
       await push(ref(database, `users/${uid}/favoriteTeachers`), id);
 
       return id;
@@ -132,7 +128,6 @@ export const removeFromUserFavorite = createAsyncThunk(
         `users/${uid}/favoriteTeachers`
       );
       const snapshot = await get(favoriteTeachersRef);
-      console.log(snapshot.val());
 
       const favoriteTeachers = snapshot.val();
 

@@ -9,13 +9,10 @@
   background-color: var(--white);
   border-radius: 24px;
 
-  @media screen and (min-width: 768px) {
-    /* flex-direction: row; */
-  }
-
   @media screen and (min-width: 1440px) {
     gap: 48px;
     flex-direction: row;
+    align-items: baseline;
   }
 }
 
@@ -72,7 +69,6 @@
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
-    /* align-items: center; */
   }
 
   @media screen and (min-width: 1440px) {
@@ -192,4 +188,9 @@
 
 .reviewerCard:last-child {
   margin-bottom: 16px;
+}
+
+
+.bookWrap {
+  margin-top: 32px;
 }

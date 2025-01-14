@@ -13,6 +13,9 @@ import {
 } from "../../redux/auth/operations";
 import Reviews from "../Reviews/Reviews";
 import { createNewPush } from "../../../utils";
+import Button from "../Button/Button";
+import { Modal } from "@mui/material";
+import BookTeacher from "../BookTeacher/BookTeacher";
 
 export default function TeacherCard({ teacher }) {
   const dispatch = useDispatch();
@@ -35,6 +38,7 @@ export default function TeacherCard({ teacher }) {
   const selected = useSelector(selectFavoriteTeachersIds);
   const loggedIn = useSelector(selectIsLogged);
   const [moreInfoOpen, setMoreInfoOpen] = useState(false);
+  const [bookOpen, setBookOpen] = useState(false);
 
   const handleOpenMoreInfo = () => {
     setMoreInfoOpen(true);
@@ -55,6 +59,14 @@ export default function TeacherCard({ teacher }) {
     selected.includes(id)
       ? dispatch(removeFromUserFavorite({ id }))
       : dispatch(addToUserFavorite({ id }));
+  };
+
+  const handleOpenBookTeacher = () => {
+    setBookOpen(true);
+  };
+
+  const handleCloseBookTeacher = () => {
+    setBookOpen(false);
   };
 
   return (
@@ -153,6 +165,15 @@ export default function TeacherCard({ teacher }) {
               </li>
             ))}
           </ul>
+          <div className={css.bookWrap} onClick={handleOpenBookTeacher}>
+            <Button>Book trial lesson</Button>
+          </div>
+          <BookTeacher
+            isOpen={bookOpen}
+            onRequestClose={handleCloseBookTeacher}
+            avatarUrl={avatar_url}
+            teacherName={`${name} ${surname}`}
+          />
         </div>
       </div>
     </div>

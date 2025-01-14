@@ -4,6 +4,7 @@
   align-items: center;
   font-weight: 700;
   font-size: 16px;
+  
 }
 
 .baseStyles {
@@ -51,5 +52,9 @@
 }
 
 .logReg {
+  width: 100%;
+}
+
+.book {
   width: 100%;
 }

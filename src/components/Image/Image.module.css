@@ -30,3 +30,12 @@
   border: 2px solid var(--white);
   z-index: 1;
 }
+
+.book {
+  width: 44px;
+  height: 44px;
+}
+
+.book::before {
+  display: none;
+}
