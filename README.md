@@ -8,10 +8,12 @@
 
 ✨ Features
 ---
-📅 Book Trial Lessons: Simple and intuitive booking process with professional tutors.
-🎯 Personalized Learning: Tailored lessons to match your goals, whether for career, exams, or travel.
-📱 Responsive Design: Works seamlessly on desktops, tablets, and mobile devices.
-🔒 Secure and Reliable: Backed by Firebase for secure data handling and real-time updates.
+- 📅 **Book Trial Lessons**: Simple and intuitive booking process with professional tutors.
+- 🎯 **Personalized Learning**: Tailored lessons to match your goals, whether for career, exams, or travel.
+- 📱 **Responsive Design**: Works seamlessly on desktops, tablets, and mobile devices.
+- 🔒 **Secure and Reliable**: Backed by Firebase for secure data handling and real-time updates.
+- 🌍 **Multi-Language Support**: Choose your preferred language for the platform interface.
+- ⚡ **Fast Performance**: Optimized for quick loading and smooth user experience.
 
 | Technology | Purpose |
 |-----------------------|----------------------------------------------|
